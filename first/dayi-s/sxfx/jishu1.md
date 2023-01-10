@@ -6,7 +6,7 @@
 
    > - 求出部分和数列
    >   - 错位相减
-   >   - 裂项：补几道[习题](https://blog,leom.me/sxfx/jishu/liexiang.html)
+   >   - 裂项：补几道[习题](https://blog.leom.me/first/dayi-s/sxfx/jishu/liexiang.html)
    >   - 方程式法：建立$S_n$的方程，解出$S_n$ 例：$\displaystyle\sum_{k=1}^nq^kcos\ (ka)$（注：也可以利用复数）
    > - Stolz定理
    > - 利用子列的极限：例题
