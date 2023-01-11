@@ -657,7 +657,7 @@ $$\alpha =a_1\varepsilon _1+a_2\varepsilon _2+\cdots +a_n\varepsilon _n$$
 
 1.5关于$\lambda$的n次方程$|\lambda E-A|=0$的解$\lambda_0$的重数称作$\lambda_0$的代数重数，向量方程$(\lambda_0E-A)x=0$的基础解系的向量个数称为$\lambda_0$的几何重数。
 
-可以[证明](https://blog.leom.me/first/dayi-s/xxds/chapter3/jihe_daishu_chongshu.html) $\lambda_0$ 的几何重数一定小于等于 $\lambda_0$ 的代数重数 
+可以[证明](https://blog.leoh.top/first/dayi-s/xxds/chapter3/jihe_daishu_chongshu.html) $\lambda_0$ 的几何重数一定小于等于 $\lambda_0$ 的代数重数 
 
 1.6若$\lambda$是A的一个特征值，$\alpha$是对应于$\lambda$的一个特征向量,则：
 
@@ -671,7 +671,7 @@ $$\alpha =a_1\varepsilon _1+a_2\varepsilon _2+\cdots +a_n\varepsilon _n$$
 
 ## 2.特征向量的性质
 
-2.1 n阶方阵A的属于不同特征值的特征向量线性无关，[证明](https://blog.leom.me/first/dayi-s/xxds/chapter3/characteristic_victor_1.html)
+2.1 n阶方阵A的属于不同特征值的特征向量线性无关，[证明](https://blog.leoh.top/first/dayi-s/xxds/chapter3/characteristic_victor_1.html)
 
 > 进而：若 $\lambda_1, \lambda_2, \cdots, \lambda_s$ 是 $A$ 的 $s$ 个两两不同的特征值, $\alpha_{i 1}, \alpha_{i 2}, \cdots, \alpha_{i r_i}$ 是对应特征值 $\lambda_i$ 的一组线性无关的特征向量,那么 $\alpha_{11}, \alpha_{12}, \cdots, \alpha_{1r_1},\alpha_{21}, \alpha_{22}, \cdots, \alpha_{2 r_2}, \cdots, \alpha_{s 1}, \alpha_{s 2}, \cdots, \alpha_{sr_1}$ 线性无关。
 
@@ -745,7 +745,7 @@ $$
 
 ## 5.方阵的Jordan标准型&最小多项式
 
-1. 定理:设A为n阶方阵，$$ f(\lambda)= \lambda ^{n}+a_{n-1}\lambda ^{n-1}+ \cdots +a_{1}\lambda +a_{0} $$是A的特征多项式，那么$$ f(A)=O $$ [证明](https://blog.leom.me/first/dayi-s/xxds/chapter3/formular1.html)
+1. 定理:设A为n阶方阵，$$ f(\lambda)= \lambda ^{n}+a_{n-1}\lambda ^{n-1}+ \cdots +a_{1}\lambda +a_{0} $$是A的特征多项式，那么$$ f(A)=O $$ [证明](https://blog.leoh.top/first/dayi-s/xxds/chapter3/formular1.html)
 2. 最小多项式
 
 > 性质：
@@ -861,7 +861,7 @@ $\text { 设 } \alpha=\left(a_1, \ldots, a_n\right)^T, \beta=\left(b_1, \ldots, 
 >
 >   - 正定性
 
-3.2[内积举例](https://blog.leom.me/first/dayi-s/xxds/chapter4/neijijuli.html)
+3.2[内积举例](https://blog.leoh.top/first/dayi-s/xxds/chapter4/neijijuli.html)
 
 3.3一些概念
 

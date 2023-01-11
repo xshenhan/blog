@@ -21,13 +21,13 @@
 
 5. 敛散性判别：
 
-   > - Cauchy准则 [例题](https://fir.leoroom.top/sxfx/guangyi/liti1.html)
+   > - Cauchy准则 [例题](https://blog.leoh.top/first/dayi-s/sxfx/guangyi/liti1.html)
    > - 收敛原理（像单调有界）
-   > - 比较判别法及其极限形式，p-判别法都要求$f(x)\ge0$ [例题](https://fir.leoroom.top/sxfx/guangyi/liti2.html)
+   > - 比较判别法及其极限形式，p-判别法都要求$f(x)\ge0$ [例题](https://blog.leoh.top/first/dayi-s/sxfx/guangyi/liti2.html)
 
 6. 绝对收敛$\Rightarrow$收敛
 
-7. A-D判别法：[证明](https://fir.leoroom.top/sxfx/guangyi/AD.html)
+7. A-D判别法：[证明](https://blog.leoh.top/first/dayi-s/sxfx/guangyi/AD.html)
 
    > $若f,g满足下列条件之一，则\int_a^bf(x)g(x)dx收敛(a,b为之一为瑕点或正负无穷)$
    >
