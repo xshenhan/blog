@@ -1,0 +1,596 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>trip</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='2023年寒假出行预案'><span>2023年寒假出行预案</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#2023年寒假出行预案">2023年寒假出行预案</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n4"><a class="md-toc-inner" href="#第1天-唐山市------洛阳市">第1天 唐山市——洛阳市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n5"><a class="md-toc-inner" href="#1龙门石窟">1.龙门石窟</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n6"><a class="md-toc-inner" href="#2洛阳老城">2.洛阳老城</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n7"><a class="md-toc-inner" href="#3洛阳白马寺">3.洛阳白马寺</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n8"><a class="md-toc-inner" href="#4木札岭原始生态旅游区">4.木札岭原始生态旅游区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n9"><a class="md-toc-inner" href="#5洛阳白云山">5.洛阳白云山</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n10"><a class="md-toc-inner" href="#6龙潭大峡谷">6.龙潭大峡谷</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n11"><a class="md-toc-inner" href="#7白云小镇">7.“白云小镇”</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n12"><a class="md-toc-inner" href="#8嵩山少林景区">8.嵩山少林景区</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n13"><a class="md-toc-inner" href="#第2天-洛阳市------武汉市">第2天 洛阳市——武汉市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n14"><a class="md-toc-inner" href="#1黄鹤楼">1.黄鹤楼</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n15"><a class="md-toc-inner" href="#2木兰文化生态旅游区">2.木兰文化生态旅游区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n16"><a class="md-toc-inner" href="#3武昌首义文化旅游区">3.武昌首义文化旅游区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n17"><a class="md-toc-inner" href="#4武汉梁湖农庄">4.武汉梁湖农庄</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n18"><a class="md-toc-inner" href="#5白云洞军事旅游风景区">5.白云洞军事旅游风景区</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n19"><a class="md-toc-inner" href="#第3天-武汉市------南昌市">第3天 武汉市——南昌市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n20"><a class="md-toc-inner" href="#1滕王阁">1.滕王阁</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n21"><a class="md-toc-inner" href="#第4天-南昌市">第4天 南昌市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n22"><a class="md-toc-inner" href="#1江西省凤凰沟">1.江西省凤凰沟</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n23"><a class="md-toc-inner" href="#2八大山人梅湖景区">2.八大山人梅湖景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n24"><a class="md-toc-inner" href="#3鄱阳湖">3.鄱阳湖</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n25"><a class="md-toc-inner" href="#4梅岭">4.梅岭</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n26"><a class="md-toc-inner" href="#5小平小道">5.小平小道</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n28"><a class="md-toc-inner" href="#6南昌起义总指挥部旧址">6.南昌起义总指挥部旧址</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n29"><a class="md-toc-inner" href="#7梅岭风景名胜区">7.梅岭风景名胜区</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n30"><a class="md-toc-inner" href="#第5天-南昌市------义乌市">第5天 南昌市——义乌市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n31"><a class="md-toc-inner" href="#1义乌国际商贸城">1.义乌国际商贸城</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n32"><a class="md-toc-inner" href="#2古月桥">2.古月桥</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n33"><a class="md-toc-inner" href="#3陶店古建筑群">3.陶店古建筑群</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n34"><a class="md-toc-inner" href="#4鄱阳湖国家湿地公园">4.鄱阳湖国家湿地公园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n35"><a class="md-toc-inner" href="#5思溪延村">5.思溪延村</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n36"><a class="md-toc-inner" href="#6婺源江湾景区">6.婺源江湾景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n38"><a class="md-toc-inner" href="#7横店影视城">7.横店影视城，</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n39"><a class="md-toc-inner" href="#8神丽峡景区">8.神丽峡景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n40"><a class="md-toc-inner" href="#9金华山双龙风景区">9.金华山双龙风景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n41"><a class="md-toc-inner" href="#10诸葛八卦村">10.诸葛八卦村</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n42"><a class="md-toc-inner" href="#11上荷塘寨春农场·青蛙乐园景区">11.上荷塘寨春农场·青蛙乐园景区</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n43"><a class="md-toc-inner" href="#第6天-义乌市------上海市">第6天 义乌市——上海市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n44"><a class="md-toc-inner" href="#1召稼楼古镇">1.召稼楼古镇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n45"><a class="md-toc-inner" href="#2七宝古镇">2.七宝古镇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n46"><a class="md-toc-inner" href="#3外滩">3.外滩</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n47"><a class="md-toc-inner" href="#4上海的南京路">4.上海的南京路</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n48"><a class="md-toc-inner" href="#5淮海路商业街">5.淮海路商业街</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n49"><a class="md-toc-inner" href="#6中国共产党第一次全国代表大会会址">6.中国共产党第一次全国代表大会会址</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n51"><a class="md-toc-inner" href="#第7天-上海市">第7天 上海市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n52"><a class="md-toc-inner" href="#1上海吴淞炮台湾湿地森林公园">1.上海吴淞炮台湾湿地森林公园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n53"><a class="md-toc-inner" href="#2美兰湖">2.美兰湖</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n54"><a class="md-toc-inner" href="#3罗店">3.罗店</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n55"><a class="md-toc-inner" href="#4金山农民画村">4.金山农民画村</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n56"><a class="md-toc-inner" href="#5上海枫泾古镇">5.上海枫泾古镇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n57"><a class="md-toc-inner" href="#6上海海湾国家森林公园">6.上海海湾国家森林公园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n58"><a class="md-toc-inner" href="#7上海花米庄行景区">7.上海花米庄行景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n59"><a class="md-toc-inner" href="#8东方明珠塔">8.东方明珠塔</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n60"><a class="md-toc-inner" href="#9上海环球金融中心">9.上海环球金融中心</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n61"><a class="md-toc-inner" href="#10嘉定南翔古镇">10.嘉定南翔古镇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n62"><a class="md-toc-inner" href="#11长兴岛郊野公园">11.长兴岛郊野公园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n63"><a class="md-toc-inner" href="#12崇明西沙湿地">12.崇明西沙湿地</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n64"><a class="md-toc-inner" href="#13崇明东滩鸟类国家级自然保护区">13.崇明东滩鸟类国家级自然保护区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n359"><a class="md-toc-inner" href="#14上海野生动物园">14.上海野生动物园</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n65"><a class="md-toc-inner" href="#第8天-上海市------扬州市">第8天 上海市——扬州市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n66"><a class="md-toc-inner" href="#1瘦西湖">1.瘦西湖</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n67"><a class="md-toc-inner" href="#2茱萸湾风景区">2.茱萸湾风景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n68"><a class="md-toc-inner" href="#3邵伯古镇">3.邵伯古镇</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n69"><a class="md-toc-inner" href="#4抗日战争最后一役文化园">4.抗日战争最后一役文化园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n70"><a class="md-toc-inner" href="#5东关历史文化旅游区">5.东关历史文化旅游区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n71"><a class="md-toc-inner" href="#6洪泽湖湿地观鸟园国家aaa级景区）">6.洪泽湖湿地观鸟园（国家AAA级景区）</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n72"><a class="md-toc-inner" href="#第9天-扬州市------唐山市">第9天 扬州市——唐山市</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n73"><a class="md-toc-inner" href="#1天上王城景区">1.天上王城景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n74"><a class="md-toc-inner" href="#2郯城中华银杏生态旅游区">2.郯城中华银杏生态旅游区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n75"><a class="md-toc-inner" href="#3皇山东夷文化园">3.皇山东夷文化园</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n77"><a class="md-toc-inner" href="#4沂蒙红色影视党性教育）基地">4.沂蒙红色影视（党性教育）基地</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n78"><a class="md-toc-inner" href="#5中华奇石城">5.中华奇石城</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n79"><a class="md-toc-inner" href="#6周村古商城">6.周村古商城</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n80"><a class="md-toc-inner" href="#7莒县浮来山风景区">7.莒县浮来山风景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n81"><a class="md-toc-inner" href="#8日照竹洞天风景区">8.日照竹洞天风景区</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n82"><a class="md-toc-inner" href="#9魏集古镇旅游区">9.魏集古镇旅游区</a></span></p></div><p>&nbsp;</p><h3 id='第1天-唐山市------洛阳市'><span>第1天 唐山市——洛阳市</span></h3><h4 id='1龙门石窟'><span>1.龙门石窟</span></h4><p><span>龙门石窟位于洛阳市区南12公里处，是与大同云岗石窟、敦煌千佛洞石窟齐名的我国三大石窟之一，国家5A景区。龙门是一个风景秀丽的地方，这里有东、西两座青山对峙，伊水缓缓北流。远远望去，犹如一座天然门阙，所以古称“伊阙”。“伊阙”，自古以来，已成为游龙门的第一景观。唐诗人白居易曾说过：“洛阳四郊山水之胜，龙门首焉”。</span></p><h4 id='2洛阳老城'><span>2.洛阳老城</span></h4><p><span>洛阳老城是金哀宗正大元年（1224年）在北宋初王曾判任河南知府时所筑城基之上改建起来的。城西墙利用了唐东城旧址。西墙及北墙西端是利用东城西北两墙旧基修起来的。老城周长近9里，四面各开一门，东为建春门，西为丽景门，南为长夏门，北为安喜门，均为重楼建筑。楼周围筑月城，其上另有角楼四座，敌台30座，作为防御工事。原来的城墙是土筑的，到明洪武六年（1373年）才修成砖墙，墙高4丈。崇祯末年，明朝统治者为了抗拒农民起义，又在城外筑了一道土墙，高1丈3尺，宽1丈，周长33华里。</span></p><h4 id='3洛阳白马寺'><span>3.洛阳白马寺</span></h4><p><span>洛阳白马寺为国家AAAA级旅游景区、全国重点文物保护单位。白马寺位于河南洛阳城东10公里处，在汉魏洛阳故城雍门西1.5公里处，古称金刚崖寺，号称“中国第一古刹”，是佛教传入中国后第一所官办寺院。它建于东汉明帝永平11年(公元68年)，距今已有近2000年的历史，是国家AAAA景区。据史料记载，东汉永平十年（公元67年）的某天晚上，汉明帝刘庄做了一个梦，梦见一位神仙，金色的身体有光环绕，轻盈飘荡从远方飞来，降落在御殿前。汉明帝非常高兴。第二天一早上朝，他把自己的梦告诉群臣，并询问是何方神圣。太史傅毅博学多才，他告诉汉明帝：听说西方天竺（印度）有位得道的神，号称佛，能够飞身于虚幻中，全身放射着光芒，君王您梦见的大概是佛吧！于是明帝派使者羽林郎中秦景、博士弟子王遵等13人去西域，访求佛道。三年后，他们同两位印度僧人迦叶摩腾和竺法兰回到洛阳，带回一批经书和佛像，并开始翻译了一部分佛经，相传《四十二章经》就是其中之一。皇帝命令在首都洛阳建造了中国第一座佛教寺院，以安置德高望重的印度名僧，储藏他们带来的宝贵经像等物品，此寺即今天的洛阳白马寺。据说是因当时驮载经书佛像的白马而得名，而白马寺也因而成为中国佛教的“祖庭”和发源地。白马寺属于中国全国重点文物保护单位。</span></p><h4 id='4木札岭原始生态旅游区'><span>4.木札岭原始生态旅游区</span></h4><p><span>木札岭原始生态旅游区位于洛阳市嵩县东南部，是国家AAAA景区、河南省首家原始生态旅游区，属木札岭伏牛山国家级自然保护区，是世界地质公园。总面积达125平方公里，森林覆盖率达98.5%。其中旅游区面积达40平方公里，超过20平方公里的区域至今无人踪迹。由九撞沟、原始森林、官帽峰三大游览区组成。距洛阳120公里，郑石高速、311国道、临木公路直达景区。景区东西毗邻石人山、白云山两大景区，木札岭旅游区地处伏牛山腹地、北温带和亚热带过渡区，位于秦岭、淮河一线重要地理分界线上。特殊的地理区位，孕育了独特原始和丰富多彩的生物资源。旅游区总面积40平方公里，其中从未有人类活动痕迹的原始森林就有20平方公里，博大精深的原始森林是植物的王国和动物的乐园。据查，景区内有包括国家级保护植物领春木、水曲柳、中华龙鳞榆、暖树、石难藤在内的植物2000多种，包括金钱豹、香獐、羚羊等在内的高等动物260多种。庞大而严密的动植物生物链无一不显示着大自然的神奇造化，这里夏季日均气温不超过26℃，是避暑休闲、探幽养生的最佳去处。</span></p><h4 id='5洛阳白云山'><span>5.洛阳白云山</span></h4><p><span>洛阳白云山位于河南省洛阳市嵩县南部伏牛山腹地，是国家级森林公园、国家级自然保护区、国家AAAA-旅游景区、中国十佳休闲胜地。景区总面积168平方公路，现已开发白云峰、玉皇顶、鸡角曼（小黄山）、九龙瀑布、原始森林五大观光区和白云湖、高山森林氧吧、高山牡丹园、留侯祠、芦花谷无大休闲区。白云山景区地跨长江、黄河、淮河三大流域之水于一峰，集三河之灵于一山，为中原独有，堪称“中原山水大观”之绝品。白云山地处暖温带与北亚热带过渡地带，平均海拔1800米，夏季最高气温不超过26℃，动植物资源十分丰富。据调查，有动物204种，植物1991种，森林覆盖率达95%以上，被专家学者誉为“自然博物馆”。境内海拔1500米以上的山峰37座，其中玉皇顶海拔2216米，为中原第一峰，是看日出观云海的最佳处。</span></p><h4 id='6龙潭大峡谷'><span>6.龙潭大峡谷</span></h4><p><span>龙潭大峡谷景区位于洛阳市新安县北部,距洛阳60公里,郑州180公里,连霍高速、310国道、陇海铁路横穿县境,位置优越,交通便利。是国家5A级景区,国家地质公园，是洛阳黛眉山世界地质公园的核心景区，是一条以典型的红岩嶂谷群地质地貌景观为主的峡谷景区。洛阳龙潭大峡谷景区谷内关峡相望，潭瀑联珠，壁立万仞，峡秀谷幽，经过十二亿年的地质沉积和260万年的水流切割旋蚀所形成的高峡瓮谷、山崩地裂奇观，堪称世界一绝，人间少有，享有“中国嶂谷第一峡”、“古海洋天然博物馆”、“峡谷绝品”和“黄河水画廊”等美名。景区内有六大自然谜团：“水往高处流、佛光罗汉崖、巨人指纹、石上天书、蝴蝶泉、仙人足迹”。七大幽潭瀑布：“五龙潭、龙涎潭、青龙潭、黑龙潭、卧龙潭、阴阳潭、芦苇潭”。八大自然奇观：“绝世天碑、石上春秋、阴阳潭瓮谷、五代波纹石、天崩地裂、通灵巷谷、喜鹊迎宾、银链挂天”。令人惊叹不已，流连忘返。红岩绝壁，飞瀑幽潭，狭沟深谷，奇石绿荫，组成世界上罕见的山水画廊。</span></p><h4 id='7白云小镇'><span>7.“白云小镇”</span></h4><p><span>”白云小镇“是国家AAA级景区，位于白云山下，河南“最美乡村”——天桥沟。距白云山景区8公里，木札岭景区23公里。311国道穿村而过，交通便利，最高海拔1800米，植被茂盛，森林覆盖率达98%，负氧离子含量是市区的20倍，山清水秀，景色宜人。北欧风格木屋别墅，坐落在苍翠欲滴的竹林之中，让游人置身于自然怀抱。所有食材均采用本地无公害有机食材，小镇建立有机菜园，就地取材，保证新鲜的食材。这里有新鲜种植的多种蔬菜，保证现摘现食，零公里运输，吃的就是那口新鲜！肉蛋和土鸡，土猪，土鸡蛋有专门的农家供应渠道，保证均衡营养，有益健康。</span></p><h4 id='8嵩山少林景区'><span>8.嵩山少林景区</span></h4><p><span>嵩山少林景区为国家级风景名胜区、国家AAAAA级旅游景区、国家地质公园、科普教育基地。嵩山位于河南省登封县境内，地处中原，故称中岳，分太室、少室二山，各36峰，主峰海拔1492米。嵩山以其历史悠久,文化灿烂,名胜古迹繁多,居五岳之冠，全山有72峰，峰多寺也多，有“上有七十二峰，下有七十二寺”之说。</span></p><h3 id='第2天-洛阳市------武汉市'><span>第2天 洛阳市——武汉市</span></h3><h4 id='1黄鹤楼'><span>1.黄鹤楼</span></h4><p><span>黄鹤楼位于湖北省武汉市。江南三大名楼之一，国家旅游胜地四十佳。素有“天下江山第一楼”之美誉。冲决巴山群峰，接纳潇湘云水，浩荡长江在三楚腹地与其最长支流汉水交汇，造就了武汉隔两江而三镇互峙的伟姿。这里地处江汉平原东缘，鄂东南丘陵余脉起伏于平野湖沼之间，龟蛇两山相夹，江上舟辑如织黄鹤楼天造地设于斯。</span></p><h4 id='2木兰文化生态旅游区'><span>2.木兰文化生态旅游区</span></h4><p><span>木兰文化生态旅游区为国家AAAAA级旅游景区。木兰故里一一武汉市黄陂区，北枕巍巍大别山，南瀕浩浩长江水，国土面积2261平方公里，人口113万，是武汉市版图最大、人口最多、生态最好的新城区。</span></p><h4 id='3武昌首义文化旅游区'><span>3.武昌首义文化旅游区</span></h4><p><span>武昌首义文化旅游区是国家AAAA级旅游景区，是湖北省、武汉市在辛亥革命100周年之际打造的经典文化旅游项目，也是武汉设施最为完备的免费景区之一，包括辛亥革命武昌起义纪念馆、首义广场、辛亥革命博物馆、紫阳湖公园、起义门、首义碑林等景点在内并集教育、观赏、休闲、购物、娱乐于一体的综合性主题文化旅游区。</span></p><h4 id='4武汉梁湖农庄'><span>4.武汉梁湖农庄</span></h4><p><span>享誉“都市风情乐园”的武汉梁湖农庄位于美丽的梁子湖畔，距纸坊城区、汤逊湖大学城各十余公里。南与梁子湖北咀码头，梁子岛一衣带水，北与宽阔的梁子湖大道相连直达武汉市区，交通便捷。是一家集生态旅游，高档宴会，客房会议，草坪婚礼，大型地下奢华KTV,采摘垂钓，农俗体验等为一体的大型生态农庄。是湖北省第一批荣获“五星级农家乐”的老字号休闲山庄。2010年以来，梁湖农庄相继获评“湖北省五星级农家乐”，“湖北省休闲农业示范点”，“武汉市旅游名村”，“武汉市十佳休闲山庄”等殊荣。</span></p><h4 id='5白云洞军事旅游风景区'><span>5.白云洞军事旅游风景区</span></h4><p><span>“白云洞”座落在武汉市南郊，距武昌火车站25公里，东靠京广铁路，西临长江和107国道，交通十分便利。背靠海拔270余米八分山，是一座天然大溶洞，据《江夏县誌》记载：“白云洞又名石洞”相传为“白龙仙子所居之仙乡”，又传说昔日黄鹤飞离黄鹤楼之后，曾落脚此洞栖息，故有白云黄鹤之说，今天称之为石洞山城，或简称石洞。“白云洞”府门为宫门庭院式的，门前两尊石狮春风满面，迎送八方游客。进入“白云洞”前院，映入我们眼帘的就是小桥流水，花圃飘香，石椅，石凳，点缀其中。洞厅内前壁有两个支洞，宽米许，深数十米，昏暗，传说此为蛇仙之宫。仰视顶壁“无梁殿”三个楷书字，也是熊廷弼所书。殿高5至6米，宽8米，深6.5米，厅堂为穹隆式殿堂，厅正方有一尊站立在莲荷上的石雕无量寿佛像，高丈余。此佛像-物部门鉴定为唐代，由整块青石雕刻而成（此佛像于八十年代初在现摆放地下挖出）。据考古学家称,此洞早为石窟寺，它和八分山上慈云寺遥遥相望，同享历代人间的香火，实属江南罕见。</span></p><h3 id='第3天-武汉市------南昌市'><span>第3天 武汉市——南昌市</span></h3><h4 id='1滕王阁'><span>1.滕王阁</span></h4><p><span>滕王阁为国家级风景名胜区、国家AAAAA级旅游景区、文化旅游景点。滕王阁，江南三大名楼之一。位于中国江西省南昌市赣江畔。屡毁屡建，今日之滕王阁为1989年重建，与古貌相比更为气派。</span></p><h3 id='第4天-南昌市'><span>第4天 南昌市</span></h3><h4 id='1江西省凤凰沟'><span>1.江西省凤凰沟</span></h4><p><span>江西省凤凰沟原名江西省凤凰沟风景区，因为地处南昌县黄马乡，又名黄马凤凰沟或南昌凤凰沟。江西省凤凰沟风景区现已成为国家AAAA级旅游景区、全国十佳农庄、中国2012年度最受欢迎景区、全国休闲农业与乡村旅游五星级园区、全国休闲农业与乡村旅游示范点、全国科普教育基地，也是江西省摄影家协会创作基地、江西省散文协会创作基地、江西省最大最受欢迎的户外婚纱摄影基地。</span></p><h4 id='2八大山人梅湖景区'><span>2.八大山人梅湖景区</span></h4><p><span>八大山人梅湖景区位于江西省南昌市青云谱区境内，是以被联合国教科文组织评委“中国十大文化艺术名人”、被郑板桥誉为“名满天下”的一代画圣——八大山人为核心，以传统文化为主轴，以梅湖生态美景为纽带的江南都市历史文化生态景区。</span></p><h4 id='3鄱阳湖'><span>3.鄱阳湖</span></h4><p><span>鄱阳湖位于江西省北部、长江南岸，流经南昌市。是中国第一大淡水湖，也是中国第二大湖，仅次于青海湖。鄱阳湖跨南昌、鄱阳、九江跨南昌、新建、进贤、余干、鄱阳、都昌、湖口、九江、星子、德安和永修等市县。鄱阳湖上承赣、抚、信、饶、修五河之水，下接长江。丰水季节浪涌波腾，浩瀚万顷，水天相连；枯水季节水落滩出，野草丰茂，芦苇丛丛；湖畔峰岭绵延，沙山起伏，沃野千里，候鸟翩飞，牛羊倘佯。美丽富饶的鄱阳湖养育了世代生长居息湖畔的万物生灵。通常以都昌和吴城间的松门山为界，分为南北(或东西)两湖。松门山西北为北湖，或称西鄱湖。湖面狭窄，实为一狭长通江港道。松门山东南为南湖，或称东鄱湖，湖面辽阔，是湖区主体。鄱阳湖景色十分优美，拥有江南最密集的湖、最高贵的鸟、最多姿的水、最诗意的草。鄱阳湖是国际重要湿地，是长江干流重要的调蓄性湖泊，在中国长江流域中发挥着巨大的调蓄洪水和保护生物多样性等特殊生态功能，是我国十大生态功能保护区之一，也是世界自然基金会划定的全球重要生态区之一，对维系区域和国家生态安全具有重要作用。中国最大的淡水湖。古称彭蠡泽、彭泽、彭湖或彭蠡，在江西省北部。汇集赣江、修水、鄱江、信江、抚河等水经湖口注入长江。湖盆由地壳陷落、不断淤积而成。形似葫芦，南北长110公里，东西宽50～70公里，北部狭窄仅5～15公里。在平水位(14～15米)时湖水面积为3,150平方公里，高水位(20米)时为4,125平方公里以上。但低水位(12米)时仅500平方公里，以致“夏秋一水连天，冬春荒滩无边”，使数百万亩湖滩地不能大量耕种，还易孳生草滩钉螺。</span></p><h4 id='4梅岭'><span>4.梅岭</span></h4><p><span>梅岭原名飞鸿山，早在汉朝初年，就辟有驿道。西汉末年，南昌县尉梅福为-王莽-,退隐西郊飞鸿山。后人纪念他的高风亮节，在岭上建梅仙坛，岭下建梅仙观，改飞鸿山为梅岭。唐朝以来，有张九龄、张商英、周必大、王安石、张位五位丞相，欧阳修、曾巩、黄庭坚、陈师道、汤显祖等文学家，岳飞等武将，慕名而来，留下了许多名诗佳作和文人景观。梅岭是佛、道两教的圣地之一，寺庙观坛曾多达136处。道书称此为第十二洞天。西山八大名刹之首的翟岩寺，8尺高的铜莲台和铜瓶、铜香炉、千僧锅。原道教名刹太平观旁有一株千年银杏，树高30米，胸围7.5米。位居山巅的紫阳宫，石室尚存，东汉开国元勋邓禹曾到此，旁有邓仙洞和真君墓。</span></p><h4 id='5小平小道'><span>5.小平小道</span></h4><p><span>小平小道在南昌郊县，原新建县拖拉机配件厂厂址，文革期间邓小平落难期间在此劳动生活了两年左右，并在此从新思考了社会主义建设的理论与实践问题，可以说是后来中国改革开放之路的起点。现原址已整修成为江西省文物保护单位，小平劳动的车间和工作台、休息室以及他每天上下班走过的土路等使人触景生情。原厂门外还新修建了纪念馆，周边环境整修良好。整个区域共分成“小平小道”纪念馆区、革命史迹浏览区、“小平铜像”、“小平车间”、“艰难岁月展厅”、“邓林摄影展厅”、“车辆陈列展厅”、“小平会场”、“休闲广场”等。是一个爱国主义教育基地，又是一个集教育纪念、休闲为一体纪念性公园。</span></p><p><span>八一南昌起义纪念馆为国家AAAA级旅游景区、全国重点文物保护单位、红色旅游经典景区。幢外观呈银灰色，座南朝北，楼高四层的回字型建筑，原为江西大旅社，始建于1922年，1924年建成，采用中西合壁的建筑风格，外观以具有西洋风格的水泥浮雕装饰门窗，楼内有一宽大的天井，天井里放有四口防火用的大水缸，显示出中国传统建筑的独特格局。</span></p><h4 id='6南昌起义总指挥部旧址'><span>6.南昌起义总指挥部旧址</span></h4><p><span>1927年8月1日凌晨2点，随着一声-响，震惊中外的八一南昌起义打响了，中共前敌委员会书记周恩来、起义总指挥贺龙、前敌总指挥叶挺、第三军军官教育团团长朱德、军事参谋团参谋长刘伯承率领起义军两万余人打响了武装反抗国民党-派的第一-，它宣告了中国共产党独立领导革命武装斗争的开始和人民军队的诞生。为了纪念这一伟大事件，1956年，人民政府建立了南昌八一起义纪念馆，馆址就设在当时的总指挥部旧址内。</span></p><h4 id='7梅岭风景名胜区'><span>7.梅岭风景名胜区</span></h4><p><span>梅岭风景名胜区是著名的避暑胜地，也是中国古典音律和道教净明宗的发源地。梅岭山势嗟峨，层峦叠翠，四时秀色，气候宜人。它以峰峦之旖旎，溪漳之蜿蜒，谷壑之幽深，岩石之突兀，云雾之缠绕，风光之掩映，组成了梅岭“翠、幽、俊、奇”的特色，素有“小庐山”之称。梅岭有主要有被称为全国第十三大避暑胜地之一的洗药湖避暑度假区、江南最大尼姑庵之一的天宁古寺、中国音乐鼻祖伶伦-地古南昌十景之一的洪崖丹井、江西最大地表皇室墓葬－皇姑墓、参天的千年银杏、气势壮观的神龙潭瀑布。还有中日友谊林、林彪别墅、紫阳宫、洪崖书画院、妙济桥、方志敏烈土墓、浑圆山庄、千年银杏、狮子峰等。梅岭位于南昌市西郊15公里处，在江南最大的“飞来峰”上，因西汉梅福于此修道而得名。又因位于城区之西，复又名西山。梅岭西临鄱阳湖，北与庐山对峙，方圆150平方公里，是著名的避暑胜地，也是中国古典音律和道教净明宗的发源地。梅岭有自然和人文景点120多处，主要景观有：被称为全国第十三大避暑胜地之一的洗药湖避暑度假区、江南最大尼姑庵之一的天宁古寺、中国音乐鼻祖伶伦-地、古南昌十景之一的洪崖丹井、江西最大的地表皇室墓葬--皇姑墓、神奇独特的名人别墅群、参天的千年银杏、峻险奇绝的狮子峰、气势壮观的脚鱼潭瀑布区、繁花锦簇、纵览云飞的中日友谊林、庄严肃穆的方志敏烈土墓等。</span></p><h3 id='第5天-南昌市------义乌市'><span>第5天 南昌市——义乌市</span></h3><h4 id='1义乌国际商贸城'><span>1.义乌国际商贸城</span></h4><p><span>义乌国际商贸城坐落于义乌市区繁华的稠州路，是目前世界上单体面积最大的商品批发市场, 也是我国规模最大，国际化、现代化程度最高的商品批发市场。国际商贸城现有经营面积170万平方米，占地约有1平方公里，3万余个商位。有一种说法，如果你在每个商位停留一分钟，按一天8个小时计算，逛完整个国际商贸城需要两三个月时间，足见市场规模之大。 2006年，国际商贸城成为全国首个以购物性质为主题的国家AAAA级旅游风景区，2006年吸引了437万游客，其中境外游客26万人次，被评为浙江省最具人气的十大景点之一。国际商贸城景区由八大区块组成，其中 A、B、C、D、E区一至三楼分别经营花类、玩具、饰品、工艺品，四楼开办了中小企业直销中心、台商馆，东辅楼为外贸企业采购服务中心。F、G区一至三楼经营五金、电器、箱包、电子、钟表、雨具等六大行业；四楼开设生产企业直销中心及韩商馆、香港馆、四川馆、安徽馆、江西九江馆、新疆和田馆等精品交易区；五楼设外贸采购服务中心；中央大厅二、三楼设大型旅游购物中心、中国小商品城发展历史陈列馆；东辅用房设有银行、餐饮、物流、邮政、移动、连体商务楼、写字楼、四星级酒店等配套服务机构，开通环线观光车。H区主要经营文化用品、体育用品、眼镜、化妆品（镜梳）、拉链、纽扣、辅料配件、皮革。购物旅游景区内除了拥有旅游购物中心外，还设有3500余家“购物旅游推荐商位”，倡导批零兼营、批零同价；与此同时，旅游区管理部门特推出了“商品索引卡”、“购物旅游一条街”等购物旅游项目，开通了景区内部环线公交车和观光旅游车、并建成了中国小商品城发展历史陈列馆等一批旅游设施，是一个集购物、旅游、休闲为一体的购物旅游景区。</span></p><h4 id='2古月桥'><span>2.古月桥</span></h4><p><span>古月桥为全国重点文物保护单位。宋代单孔石拱桥。位于浙江省义乌市赤岸镇雅治街西侧100米，横跨龙溪。建于宋嘉定六年（1213年）。古月桥采用单拱纵联分节列砌置法建造，桥拱呈五边形。该桥全长31.2米，净跨15米，桥面宽4.5米，两侧引桥各长8.1米，矢高4.15米，坡度30度。桥身分三层叠砌，底层用条石块直砌，共五折，呈五边形。每节用六块长2.8米、厚0.55米、宽0.3米的石条直砌，条石之间距离0.55米，搭接处用长4.75米、高0.58米、宽0.3米的横锁石承接。全桥共用三十根条石、四根横锁石。中间层为条石横砌，规格不一，桥面以沙泥和方石铺成，桥面两侧设有宽0.5米、高0.4米的压栏石。桥侧面中部横石匾上刻有“皇宋嘉定癸酉季秋润月建造”字样，为该桥建造年代无疑。此桥虽经几百年风雨侵蚀，石质风化严重，但仍保持其古朴风貌与别致造型。其石拱形式与《清明上河图》中的虹桥相类似，是研究我是古代石拱桥的重要实物资料，具有很高的历史、科学价值。</span></p><h4 id='3陶店古建筑群'><span>3.陶店古建筑群</span></h4><p><span>陶店古建筑群位于义乌市廿三里街道，年代为清。包括何氏宗祠、慎修堂、继善堂、十三间、何氏宗祠位于义乌市廿三里街道陶店村路北66号，又称小宗祠，坐西朝东，前面有小溪盘旋，似襟带绕流。建筑分前后两院，分三进五开间左右厢庑，建筑面积641平米，耗工4年完成，乾隆五十四年（1789）由何懋宰发起建造。道光十二年（1832），其子孙又对宗祠进行了大规模的改建和扩建。现存青石门楼系道光时期建筑的原物，上面记载了落成的年代。清咸丰十一年（1861）被太平军焚毁，光绪十四年（1888）修复。建筑采用木梁石柱，冬瓜月梁，彻上明造，梁架结体粗壮，木雕精美，门面的青石牌楼有很精美的石雕，曾办过私塾，义乌乡贤何菁曾就读于私塾，由其祖父任教。何氏宗祠规模较大，保存完整，有准确的纪年，具有较高的历史、艺术和科学价值。</span></p><h4 id='4鄱阳湖国家湿地公园'><span>4.鄱阳湖国家湿地公园</span></h4><p><span>鄱阳湖国家湿地公园以湿地为主体景观，集湖泊、河流、草洲、泥滩、岛屿等其他类型的复合型湿地公园。是世界六大湿地之一，亚洲湿地面积最大、湿地物种最丰富的国家级湿地公园，国家4A级景区，也是观赏鄱阳湖的最佳地带。鄱阳湖烟波浩淼，气势磅礴，公园内河流众多，溪水蜿蜒，农田蔓延，芦苇片片。湖光山色，景色幽静，环境优雅，空气清新，溶山水之灵气于一方，汇自然与人文为一体。湿地公园内集湿地文化、候鸟文化、农耕文化、饮食文化等人文景观资源于一体，形成了融多种风格文化景观为一体的湿地旅游景观。鄱阳湖国家湿地公园是集湖泊、河流、草洲、泥滩、岛屿、泛滥地、池塘等湿地为主体景观，湿地资源丰富、类型众多而极具代表性的纯自然生态的复合型湿地公园。是世界六大湿地之一，亚洲湿地面积最大、湿地物种最丰富的国家级湿地公园，国家4A级景区，中国科普教育基地。</span></p><h4 id='5思溪延村'><span>5.思溪延村</span></h4><p><span>这里为国家AAAA级旅游景区。思溪和延村实际是前后两个村落，由一条小河和一条路连接。这里历史上出过很多官员和商人，所以村子里有不少豪宅。整个村落以明清古建筑为主，村内以青石板铺地，古建群背靠青山，面临清溪和稻田，村庄与秀水青山的优雅自然风光融为一体。而1987年版的《聊斋》在此取景，真正使思溪延村名声大噪。另外这里也是连续剧《青花》的拍摄地。</span></p><h4 id='6婺源江湾景区'><span>6.婺源江湾景区</span></h4><p><span>这里为国家AAAAA级旅游景区。江湾景区，位于江西省上饶市婺源县境内东北部，面积27.4平方公里，2001年6月20日建成开放，距婺源县城28公里，距风景名胜区黄山96公里，离景婺黄高速公路道口1公里。</span></p><p><span>江湾是一座具有丰厚的徽州文化底蕴的古村落，村中保存着三省堂、敦崇堂、培心堂、滕家老屋等一大批徽派古建筑和萧江宗祠、江永纪念馆、南关亭、北斗七星井等景点。为展示婺源的文化特色，江湾景区新建百工坊、鼓吹堂、公社食堂等景点，让游客体会旧时手工艺匠人的传统技艺，观赏徽剧、婺源民歌等传统剧目，具有历史价值和观赏价值。</span></p><h4 id='7横店影视城'><span>7.横店影视城，</span></h4><p><span>这里位于中国东阳市横店境内，为国家AAAAA旅游区，距杭州160公里，处于江、浙、沪、闽、赣四小时交通旅游经济圈内。乘飞机、火车或走高速公路均可直达。自1996年以来，横店集团累计投入30个亿资金兴建横店影视城，现已建成广州街、香港街、明清宫苑、秦王宫、清明上河图、梦幻谷、屏岩洞府、大智禅寺、明清民居博览城等13个跨越几千年历史时空，汇聚南北地域特色的影视拍摄基地和两座超大型的现代化摄影棚。已成为目前亚洲规模最大的影视拍摄基地，被美国《好莱坞》杂志称为&quot;中国好莱坞&quot;。浦江神丽峡地处风光秀丽的浦江县，系横店集团投资开发，并已成为横店影视城拍摄外景的一个影视基地。神丽峡交通极为便捷，距杭州120公里，义乌28公里，杭金衢高速公路浦江出口7公里。</span></p><h4 id='8神丽峡景区'><span>8.神丽峡景区</span></h4><p><span>这里属典型的自然峡谷型景观，山峦起伏、巨石嵯峨、瀑布跌水层出不穷，自然资源较为丰富，尤其是成千上万只天然放养的鸟类，可与游客嬉戏，人与自然融为一体。景区南部群山峻峭、自然环境清幽；北部祠堂庙宇、明清建筑别具考究。有香炉烟云、朱云瀑布、石笋冷泉、仙人长眠、猪头山、陈爷爷担石、百步幽谷、流星崖观鹰等二十处山景；景区内长达3公里的古驿道，古驿道中有一座古驿站“十里亭”。神丽峡自宋以来就是文人墨客游览得好去处，宋、元、明、清四代名人都曾写过大量游记游诗，如吴思齐、方凤、谢翱等都曾结伴畅游并留下诸多诗篇。景区南部崇山峻岭、云雾缭绕、林深水秀，坪多、石奇、瀑美，自然环境清幽。</span></p><h4 id='9金华山双龙风景区'><span>9.金华山双龙风景区</span></h4><p><span>这里位于金华市城北8公里西南山麓，唐代杜光庭《洞天福地记》称&quot;第三十六洞天金华山&quot;,是我国道教第三十六洞天所在地，又称赤松山，相传为晋时黄初平（号赤松子）-得道成仙处。至宋元佑六年(1091年)，婺州太守祈雨北山，从此名声大振，游人不绝，誉满东南。宋朝名相王安石赞为&quot;横贯东南一道泉&quot;。现山、石、水、洞等胜景风貌依然，险、奇、秀、幽的景观气派犹存。</span></p><h4 id='10诸葛八卦村'><span>10.诸葛八卦村</span></h4><p><span>这里位于兰溪城西18公里，古称“高隆”，村中有3000余人是诸葛亮嫡传后裔，为全国最大的诸葛亮后裔集中聚居地。诸葛村整体结构是诸葛亮第27代裔诸葛大狮按九宫八卦设计布局的，村内弄堂似通非通，似连非连，曲折玄妙。整体布局以村中钟池为中心，全村房屋呈放射性排列，向外延伸八条弄堂，将全村分为八块形成内八卦，更为神奇的村外八座小山环抱整个村落，构成外八卦。</span></p><h4 id='11上荷塘寨春农场·青蛙乐园景区'><span>11.上荷塘寨春农场·青蛙乐园景区</span></h4><p><span>这里以“农业科普、农事体验、采摘观光、亲子游乐”为特色的浙中首家“农旅融合”主题乐园，园区以无公害蔬菜瓜果采摘区、农业科普长廊、风土农事体验区、儿童趣味游乐区、大型游乐区、农耕文化展示区、嘻哈亲水区、休闲荷塘垂钓区、DIY自助烧烤区、阳光餐厅等多功能休闲游乐，来最大限度的满足游客多样化的旅游需求。</span></p><h3 id='第6天-义乌市------上海市'><span>第6天 义乌市——上海市</span></h3><h4 id='1召稼楼古镇'><span>1.召稼楼古镇</span></h4><p><span>这里位于闵行区浦江镇东部，毗邻2010年世博园区，起始于元朝初期，形成于明朝年代，兴于清朝时期，至今已有700多年历史了。古镇占地约335亩，集江南水乡、江南集镇的特征为一体，更是典型的浦东水乡、浦东集镇。</span></p><h4 id='2七宝古镇'><span>2.七宝古镇</span></h4><p><span>这里位于上海西南近郊，始建于宋，自古以来商贾云集、人文荟萃。古镇上一条南北贯通的明清老街，仅容三人并行，两旁都是朱红排门的老商铺。小桥流水、明清街巷是江南古镇的共同特色，而在七宝却能感受到与众不同的海派韵味。蟋蟀馆、老行当再现的是昔日上海的民俗风情；老饭店、天香楼推出的是颇具代表性的上海菜；七宝戏园展演的是沪上一些主要地方戏曲；微雕馆、书翰馆表现的是中国民间艺术与海派文化的和谐结合；张充仁纪念馆的西洋雕塑艺术更是诠释了海派精神对于外来文化介入时的宽容和理智。</span></p><h4 id='3外滩'><span>3.外滩</span></h4><p><span>这里，百余年来，一直作为上海的象征出现在世人面前，她位于外白渡桥至南浦大桥的黄浦江西岸，全长4公里，是九十年代上海十大新景观和十佳旅游景点之一。外滩的东侧是浩荡的黄浦江和漂亮的外滩新堤岸，在这里，游客可以领略上海母新河----黄浦江的风采，远眺对岸浦东陆家嘴地区的新姿，或是散步于绿树花坛之间，感受大都市园林的别有风味，享受大都市少有的清新空气的明媚阳光。</span></p><h4 id='4上海的南京路'><span>4.上海的南京路</span></h4><p><span>这里是上海最热闹最繁华的商业大街，被誉为&quot;中华商业第一街&quot;。在这里汇集了数百家现代化商厦、中华老字号商店及名特产品商店，南京路成为我国最大的零售商品集散地和商业信息总汇，每天流向南京路的人流达到上百万人次。</span></p><h4 id='5淮海路商业街'><span>5.淮海路商业街</span></h4><p><span>这里为国家AAAA级旅游景区。淮海路东起人民路，西至凯旋路，分东、中、西三段，蜿蜒十余里，是上海著名的商业街。其中最繁华的是淮海中路，原名霞飞路，1949年改名。在上世纪30年代即以幽美、繁华和富有异国情调而享誉中外。淮海路以前属法祖界，路边种植法国梧桐树，极具欧陆风情。淮海路广纳世界精品，拥有400多家商店，如巴黎春天、华享伊势丹、大时代广场、金钟广场、上海广场、香港广场、太平洋百货淮海店、百盛等。在这可以看到时尚的最前沿，走在路上的青年男女让你觉得走进了一本活生生的“世界时装之苑”。</span></p><h4 id='6中国共产党第一次全国代表大会会址'><span>6.中国共产党第一次全国代表大会会址</span></h4><p><span>这里，简称中共一大会址，是中国共产党的诞生地。会址位于上海市兴业路76号（原望志路106号），是一幢沿街砖木结构一底一楼旧式石库门住宅建筑，坐北朝南。中国共产党第一次全国代表大会于1921年7月23日至7月30日在楼下客厅举行。中共一大会址在1952年后成为纪念馆，1959年5月26日公布为上海市文物保护单位。</span></p><h3 id='第7天-上海市'><span>第7天 上海市</span></h3><h4 id='1上海吴淞炮台湾湿地森林公园'><span>1.上海吴淞炮台湾湿地森林公园</span></h4><p><span>这里为国家AAAA级旅游景区、国家级森林公园、国家级湿地公园、科普教育基地。吴淞炮台湾湿地森林公园位于上海市宝山区海滨街道东部，为黄浦江、长江、东海三水汇聚地，西倚炮台山，南迄塘后支路，北至宝杨路，其西南角是著名的吴淞口，清朝时借此地形建造水师炮台，所以得名为炮台湾，呈南北狭长地貌。炮台湾湿地森林公园陆地面积53余公顷、原生湿地面积约50公顷、沿江岸线长达1974.13米。公园以自然、生态为设计理念，保留了长江滩涂地的原生态风貌。园内亭台中西结合、栈道林木相互错落，江水清澈、环境优美，又突出鲜明的国防科技特色，成为上海北部一大新旅游景观。现已开放。</span></p><h4 id='2美兰湖'><span>2.美兰湖</span></h4><p><span>这里位于上海宝山区罗店，面积110亩，是上海市区第二大人工湖。美兰湖是罗店新镇的核心景观，被誉为“北上海最美丽的地方”。走进美兰湖罗店北欧新，一股浓厚的异域风情让人顿时辨不清到底身在何处。波光粼粼的湖面在柔美阳光的映衬下，矗立着的钟阁搭配起了各式红墙黑瓦的洋房。景区以美轮美奂的美兰湖为中心，四周建有北欧风格三层不等的围合式建筑。有：亦购亦游的奥特莱斯购物广场和集餐饮、娱乐、休闲一体的北欧风情街；北欧城堡般的五星级美兰湖皇冠假日酒店；北上海顶级会议地标性建筑美兰湖国际会议中心。</span></p><h4 id='3罗店'><span>3.罗店</span></h4><p><span>这里始建于元朝至正年间(1341-1368年)至今已有500多年的历史。相传有个叫罗升的人在此经商开店，遂称罗店。由于练祁河自西而东流经该地，又名罗溪；镇区在练祁河之侧，也叫罗阳。罗店西临嘉定，北达浏河，西抵大场，东至吴淞，水陆交通发达，经济繁荣，是宝山的首镇。远在明代万历年间，罗店已是一个物产丰富、商贾辐辏的商业大镇。到了清代康熙年间，又发展成为一个颇具特色的棉花、棉布交易中心，吸引了大批外来的徽州商客，生意兴隆，成交金额超过了南翔镇，因此有金罗店、银南翔之称。清雍正三年，宝山建县后，罗店人口日增，市面繁荣。据光绪《罗店镇志》记载：镇里市面非常热闹，每天都有运货的车船来往，街巷纵横，象棋盘脉络那样密布。</span></p><h4 id='4金山农民画村'><span>4.金山农民画村</span></h4><p><span>这里位于上海市金山区枫泾镇中洪村，是集农民画研究、创作、展示、收藏、流通、认证于一体并具有江南农村风貌的旅游风景区。金山农民画村规划总面积4500亩，分为“丹青人家”、“棚户人家”、“水上人家”、“稻香人家”、“枫泾人家”五期。主要景点和游乐项目有：金山农民画展厅、农家鱼塘垂钓、“农闲园”儿童游乐、农民画家居住创作室5座、农闲草廊休闲、知青广场文艺表演等。</span></p><h4 id='5上海枫泾古镇'><span>5.上海枫泾古镇</span></h4><p><span>这里是中国历史文化名镇，亦为新沪上八景之一，位于西南方。历史上，它因地处吴越交汇之处，素有吴越名镇之称；如今，它与沪浙五区县交界，是上海通往西南各省的最重要的“西南门户”。枫泾为典型的江南水乡古镇。古镇周围水网遍布，镇区内河道纵横，桥梁有52座之多，现存最古的为元代致和桥，据今有近700年历史。镇区规模宏大，全镇有29处街、坊，84条巷、弄。至今仍完好保存的有和平街、生产街、北大街、友好街四处古建筑物，总面积达48750平方米（不包括其他街区保存的古建筑物），是上海地区现存规模较大保存完好的水乡古镇。</span></p><h4 id='6上海海湾国家森林公园'><span>6.上海海湾国家森林公园</span></h4><p><span>这里位于上海市奉贤区五四农场境内，距上海市中心60公里，是以森林为主体，融苗木生产、休闲观光、科学研究和科普教育为一体的模拟自然的大型人工城市生态森林。上海海湾国家森林公园总面积15983.5亩，园内植树达400多万株，品种约350种，是在模拟自然、回归自然的基本理念指导下，通过人工营造形成的近自然形态的森林。森林生态景观根据不同垂直度、空间位置和季节景观的需要，营植浑厚而又凸显自然的复合混交林群落：将观花、观叶、观果有机结合，用各种彩叶树种星点在绿色的本底之中，现已经形成了以森林生态为基础的多彩的城市森林景观。公园内连绵起伏的山体上林木苍绿如海；蜿蜒深邃的河、海上波光粼粼，群鸟飞翔，林边路边草木繁茂、色彩纷呈，其中沉水樟、舟山新姜子、黄蘗等18种为国家珍稀濒危植物，还有水域面积达580亩的上海最大人工湖泊——百鸟湖。</span></p><h4 id='7上海花米庄行景区'><span>7.上海花米庄行景区</span></h4><p><span>这里是上海面积最大最集中的油菜花地，也是踏青出游、体验农趣的好地方。景区以乡村为舞台，以原生态田园美景为核心，以民俗文化为灵魂，打造四季节庆活动，形成“春赏菜花、夏食伏羊、秋品新米、冬看民俗”的乡村旅游四季歌，成为上海市郊最迷人的风景线。</span></p><h4 id='8东方明珠塔'><span>8.东方明珠塔</span></h4><p><span>这里仅次于加拿大多伦多电视塔和俄罗斯的莫斯科电视塔。东方明珠电视塔选用了东方民族喜爱的圆曲线体作为基本建筑线条。主体有三个斜筒体，三个直筒体和11个球体组成，形成巨大空间框架结构。筒体内有6部电梯，其中一部是可载50人的双层电梯，还有一部在上球体和太空舱间运行。塔体可供游览之处有：下球体、中间球体及环廊、上球体及太空仓等。下球顶高118米，设有观光环廊和梦幻太空城等；上球顶高295米，有旋转茶室、餐厅和可容纳1600人观光平台。上下球之间有5个小球，是5套高空豪华宾馆；太空仓供外宾观光。灯光在电脑操纵下可以根据天气变化自动调节，产生1000多种变化。电视塔的灯光效果也令人叹为观止。乘上东方明珠塔的电梯，只需四十秒钟，便可到达263米高的观光球上，在这里，极目远眺，上海景色尽收眼底，原来的高楼大厦，现在都显得矮小了许多，蜿蜒的黄浦江上，巨轮如梭，连绵入海。分列两边的两座大桥，如两条巨龙，腾飞于黄浦江上，与中间的东方明珠一起，巧妙的组合成一幅二龙戏珠的巨幅画面。入夜，巨大的球体在五彩灯光的装饰下，光彩夺目，群星争辉，更显得晶莹剔透。与浦西外滩的灯光建筑-相辉映，展现出现代化大都市的迷人之夜。此塔与扩大至15．5万平方米的浦东公园融为一体，园内还有大小不同15个球体，烘托电视塔的二个巨大球体，故有&quot;东方明珠&quot;之称。附近还有娱乐中心、商业中心，将是浦东大型多功能旅游景点。现已成为&quot;90年代上海十大新景观&quot;和&quot;十佳旅游景点&quot;之一。</span></p><h4 id='9上海环球金融中心'><span>9.上海环球金融中心</span></h4><p><span>这里是以日本的森大厦株式会社（MoriBuildingCorporation）为中心，联合日本、美国等40多家企业投资兴建的项目，总投资额超过1050亿日元（逾10亿美元）。原本设计高460米，工程地块面积为3万平方米，总建筑面积达38.16万平方米，比邻金茂大厦。上海环球金融中心共100层，其中94-100层都为观光层。其中倒梯形底部为97层观光天桥，而倒梯形顶部为100层则设置了长约55米的贵宾观光天阁。</span></p><h4 id='10嘉定南翔古镇'><span>10.嘉定南翔古镇</span></h4><p><span>这里为国家AAAA级旅游景区。南翔位于上海的西北，是嘉定联接上海的门户，南翔是一个千年古镇，早在梁天监四年（公元505年）建成白鹤南翔寺，因寺得名。后又建成五代砖塔──双塔、南宋抗金民将韩世宗留下的烽火墩──鹤槎山、明代建造的园林──古猗园。至今已有1500多年的历史，是上海市四大历史文化名镇之一。南翔古名槎溪，梁武帝建国的时候，南翔还只是一个荒凉的乡村。一天，当地农民在耕地时挖到一块一丈多长的大石块，石块一露地面，就有一对丹顶鹤在石块上空盘旋，落到石块上歇脚。一个叫德齐和尚认为这里是一块佛地，决定在此建造一座佛寺。说来也怪，每天白鹤飞往哪个方向，哪个方向就有人来献款，天天如此，从不间断。不久就筹集到一大笔钱，破土动工建造寺院。505年（梁天监四年）建成白鹤南翔寺，因寺成镇，便取名南翔。南翔颇多古迹，有南翔寺砖塔一对，在镇中心香花桥北堍，是建于梁天监年间的白鹤南翔寺仅存的遗物。1985年起修葺，至1987年重现风姿，基本恢复原貌。南翔寺尊胜陀罗尼经幢俗称经幢石，有2座，现坐落在古猗园的南厅和微音阁前，原对峙于南翔寺大雄宝殿前。一立于唐咸通八年（867），一立于唐干符二年（875），是当年寺中的八景之一。1959年扩建古猗园时搜集整修于今址。鹤槎山，是南宋建炎四年(1130)韩世忠由平江移军海上抗击金兵，在南翔驻军筑此烽火墩，作为信号联络之用。</span></p><h4 id='11长兴岛郊野公园'><span>11.长兴岛郊野公园</span></h4><p><span>这里为国家AAAA级旅游景区。这座郊野公园位于崇明区长兴镇中部，面积相当于1.5个东平国家森林公园那么大。公园内，橘采摘园、百果天地里果实荟萃，柑橘、樱桃、黄桃、水蜜桃、柿子、葡萄、梨、无花果、猕猴桃、蓝莓、树莓、草莓等应有尽有，游客在不同季节都能体验到不同的采摘乐趣。你还可以带着宠物一起来郊游。</span></p><h4 id='12崇明西沙湿地'><span>12.崇明西沙湿地</span></h4><p><span>这里总面积为4500亩，是上海目前唯一具有自然潮汐现象和成片滩涂林地的自然湿地。去年9月开始，西沙湿地通过生态引鸟、植物多样性配置、水处理净化等工程，在原有湿地的基础上，修复建成一个集科普教育、科学研究、休闲观光等为一体的多功能湿地生态示范区。西沙湿地与东滩湿地不同，周而复始的潮汐现象，是西沙湿地赖以生存的重要条件。潮水一涨一落的时间平均为12小时24分钟。因为潮汐，这里形成了丰富的地形地貌，湿地中港汊纵横，具有湖泊、泥滩、内河、芦苇丛、沼泽等不同的湿地形态。另外，潮汐的涨落还孕育了湿地里多样性的动物，比如迁徙到来的候鸟和随着潮汐而来的沙蟹。为了让游客更接近大自然，湿地管理方在湿地里建起一条2公里长的木栈桥，游客们可通过栈桥徜徉于芦苇和丛林之中。</span></p><h4 id='13崇明东滩鸟类国家级自然保护区'><span>13.崇明东滩鸟类国家级自然保护区</span></h4><p><span>这里是以迁徙鸟类为主要保护对象的湿地类型自然保护区，位于长江入海口，在中国第三大岛崇明岛的最东端，它是由长江携带大量的泥沙沉积而成，是长江口地区规模最大、发育最完善的河口型潮汐滩涂湿地，其南北狭，东西宽，区内潮沟密布，高、中、低潮滩分带十分明显，是亚太地区迁徙水鸟的重要通道。</span></p><h4 id='14上海野生动物园'><span>14.上海野生动物园</span></h4><p><strong><span>上海野生动物园，位于上海 浦东新区 南六公路178号</span></strong><span>，是由 上海市人民政府 和中国国家林业局合作建设的中国首座国家级 野生动物园 ，占地153公顷（约2300亩），距上海市中心35公里，于1995年11月18日正式对外开放。 2007年5月8日，上海野生动物园经 国家旅游局 正式批准为 国家AAAAA级旅游景区 。 园区居住着大熊猫、金丝猴、 金毛羚牛 、 朱鹮 、长颈鹿、斑马、羚羊、 白犀牛 、猎豹等来自国内外的珍稀野生动物200余种，上万余只，园区分为车入区和步行区两大参观区域。 上海野生动物园是集野生动物饲养、展览、繁育保护、科普教育与休闲娱乐为一体的主题公园，荣获2015-2019年度全国科普教育基地荣誉称号</span></p><h3 id='第8天-上海市------扬州市'><span>第8天 上海市——扬州市</span></h3><h4 id='1瘦西湖'><span>1.瘦西湖</span></h4><p><span>这里位于江苏省扬州市西北部，因湖面瘦长，称“瘦西湖”。窈窕曲折的湖道，串以长堤春柳、四桥烟雨、徐园、小金山、吹台、五亭桥、白塔、二十四桥、玲珑花界、熙春台、望春楼、吟月茶楼、湖滨长廊、石壁流淙、静香书屋等两岸景点，俨然一幅天然秀美的国画长卷。</span></p><h4 id='2茱萸湾风景区'><span>2.茱萸湾风景区</span></h4><p><span>这里位于扬州城区东北郊湾头镇。古称茱萸村、茱萸湾。茱萸湾是进入扬州市区的门户，唐代还是对外交往的港口。隋炀帝三下扬州，清康熙、乾隆六次南巡都经过这里。唐代诗人王维“遥知兄弟登高处，遍插茱萸少一人”和刘长卿“落花逐流水，共到茱萸湾”等佳句，使其声名远播。茱萸湾风景区距市区5公里，面积约50公顷，是国家4a级旅游区。茱萸湾风景名胜区建有华东地区一流的动物散养观赏区，游客可近距离与狮子、老虎、棕熊等动物接触。还建有8千米的环岛运河风光带，有季节特征明显的植物林带（雪松、柿树、翠竹）及各类花卉观赏园。茱萸湾风景区以茱萸为名。茱萸，是一种常绿带香的植物，具备杀虫消毒、驱寒祛风的功能。木本茱萸有吴茱萸、山茱萸和食茱萸之分，都是著名的中药。茱萸湾已成为国内最大规模的观赏性茱萸地。景区内有扬州“双市花”——琼花和芍药。每到春季，四面八方的游人一起和这盛世奇葩共度春光。</span></p><h4 id='3邵伯古镇'><span>3.邵伯古镇</span></h4><p><span>这里为国家AAAA级旅游景区。全国千座历史文化名镇之一，至今已有1600多年历史。2008年邵伯列入第四批中国历史文化名镇名录。2014年邵伯明清运河古道、邵伯码头群、邵伯古堤、邵伯老船闸、淮扬运河主线（邵伯段）等列入中国大运河世界遗产保护名录，邵伯古镇是大运河沿线遗产点最多的古镇。邵伯老街建于清康熙年间，古街道路面由近万青条石铺成，绵延三里多，这条石街原是泥土路面，雨天行走甚是不便，后经过民间集资，铺设这条雨不积水、晴不扬尘、平整光滑的石路面。1958年的大跃进时期，巷道条石移作他用，但这条大街的条石路面幸运的保存下来。到邵伯老街，您不妨走一走这老街古道，与唐代古石头、宋代古井或明代古宅亦或是清代老店铺来一次邂逅。古甘棠树植于公元385年，当地居民为纪念谢安解东涝西旱所植。几百年来，郁郁葱葱，生机盎然。相传这珠甘棠树有三奇：一奇无风自动，二奇华而不实，三奇先开后合。品种极其名贵罕见。镇水铁牛是邵伯镇水防涝的宝物，铸于清康熙年间，距今已有300多年。据说千里运河线上共有九牛二虎一只鸡，邵伯铁牛为其一，均为镇水之用。饱经风霜的邵伯铁牛被邵伯人亲切地称铁牛干妈妈。</span></p><h4 id='4抗日战争最后一役文化园'><span>4.抗日战争最后一役文化园</span></h4><p><span>这里为国家AAAA级旅游景区。抗日战争最后一役纪念馆现为国家级抗战纪念设施、遗址名录，国家4A级旅游景区。抗日战争最后一役纪念馆（高邮战役纪念馆、侵华日军向新四军投降处旧址）位于江苏省高邮市熙和巷70号，是第二批国家级抗战纪念设施、遗址名录。是扬州唯一的国家抗战纪念设施、遗址名录。央视纪录片东方主战场、最后一战摄制组来高邮拍摄抗日战争最后一役纪念馆专题。粟裕之子、北京军区原副司令员粟戎生中将邀请中国人民解放军总后勤部原政委周克玉上将为抗日战争最后一役纪念馆题写馆名。自抗日战争最后一役纪念馆开放以来，已成为扬州地区，乃至省内外一个重要的独具特色的爱国主义教育基地、廉政教育基地、国防教育基地及红色旅游景点。高邮战役成为中国抗日战争中对日寇的最后一战。曾经《解放日报》对高邮战役的报道。1945年8月15日，日本宣布无条件投降。1945年底，在苏皖边区政府南面还有一座县城没有解放，仍然被日伪军占据着，这就是高邮城。1945年12月19日～26日，经中共中央军委批准，华中野战军第七、八纵队和地方武装，新四军华中军区坚决执行朱德总司令的命令，派部队受降，对拒绝投降之日伪武装坚决予以消灭。在华中军区司令员张鼎丞、副司令员粟裕亲自部署和指挥下发起高邮战役，四军华中野战军在高邮对拒绝投降的日伪军发起进攻，并一举收复高邮城，这也是抗日战争中解放的最后一座城市，并且是全国范围内歼敌最多的县市之一。抗日战争最后一役纪念馆（高邮战役纪念馆）：纪念馆分为6个部分，第一部分：战前形势；第二部分：运筹帷幄；第三部分：战役过程；第四部分：受降仪式；第五部分：制胜法宝；第六部分：战役意义。其中，照片和图片76张、板块17张、场景4个、新四军战士群雕1组、沙盘模型1个、视频2个。纪念馆陈展面积近500平方米，以照片、实物、油画、场景、微电影等形式，展示了高邮战役全过程。</span></p><h4 id='5东关历史文化旅游区'><span>5.东关历史文化旅游区</span></h4><p><span>这里为国家AAAA级旅游景区。东关街是扬州城里最具有代表性的一条历史老街。它东至古运河边，西至国庆路，全长1122米，原街道路面为长条板石铺设。以前不仅是扬州水陆交通要冲，而且是商业、手工业和宗教文化中心。街面上市井繁华、商家林立，行当俱全，生意兴隆。陆陈行、油米坊、鲜鱼行、八鲜行、瓜果行、竹木行近百家之多。东关街上的“老字号”商家就有开业于1817年的四美酱园、1830年的谢馥春香粉店、1862年的潘广和五金店、1901年的夏广盛豆腐店、1909年的陈同兴鞋子店、1912年的乾大昌纸店、1923年的震泰昌香粉店、1936年的张洪兴当铺、1938年的庆丰茶食店、1940年的四流春茶社1941年的协丰南货店、1945年的凌大兴茶食店、1946年的富记当铺，此外还有周广兴帽子店、恒茂油麻店、顺泰南货店、恒泰祥颜色店，朱德记面粉店等。东关街是扬州手工业的集中地，前店后坊的连家店遍及全街，如樊顺兴伞店、曹顺兴箩匾老铺、孙铸臣漆器作坊、源泰祥糖坊、孙记玉器作坊、董厚和袜厂等。洪泽湖湿地公园，国家AAAA级旅游景区、中国十大生态休闲基地，是泗洪县充分利用洪泽湖湿地国家级自然保护区的资源优势打造的集生态休闲、观光游览、科普教育等为一体的旅游景区。目前已建成多媒体展示馆、湿地生态博物馆、古泗州文化博物馆、湿地水族馆、湿地景观立体电影演示厅、荷花大观园、千荷园、鱼类繁育中心、游船码头、水车体验区、垂钓中心、湿地芦苇迷宫、精品荷花池、主题文化墙等旅游景点，建有水上网球场、沙滩排球场、高尔夫练习场、水上运动中心等健身运动项目，配套建设了金水山庄度假村、游客服务中心、湿地管护中心等服务设施。景区内湖水浩淼，原野广袤，荷苑飘香，曲桥蜿蜒，芦荡深深，百鸟齐鸣，置身其中，宛如走进一幅原始、自然的旖旎画卷。湿地公园2009年被评为国家级AAAA级旅游景区，同时荣获长三角世博之旅示范点称号，2010年该景区又荣获宿迁市优秀旅游景区、省级放心消费示范单位称号，同时被评为江苏省自驾游基地、江苏省摄影基地。</span></p><h4 id='6洪泽湖湿地观鸟园国家aaa级景区）'><span>6.洪泽湖湿地观鸟园（国家AAA级景区）</span></h4><p><span>这里位于泗洪县城头乡林场四场，占地面积1380公顷，园内森林茂密，生长各种植物110余种，鸟类约194种。鸟类以鹭鸟为主，尤以牛背鹭、池鹭、苍鹭、白鹭等居多，鸟类栖息高峰期可达数十万只，场景非常壮观，被江苏省指定为“青少年爱鸟护鸟教育基地”，也是全国著名的鹭鸟拍摄基地，摄影家的天堂。景点很好的保存了湿地森林的原生态风貌，森林繁茂、空气清新，湖水澄碧、百鸟鸣唱、野趣浓郁，是集森林观光、会议旅游、休闲度假、参与性娱乐为一体的湖滨特色森林公园。</span></p><h3 id='第9天-扬州市------唐山市'><span>第9天 扬州市——唐山市</span></h3><h4 id='1天上王城景区'><span>1.天上王城景区</span></h4><p><span>这里位于沂水县城西北40公里处，地处沂蒙山腹地的沂水、沂源、蒙阴三县交汇点。主体景区纪王崮处在周围60多座山崮的环抱之中，被誉为沂蒙七十二崮之首。纪王崮海拔577.2米，面积为4平方公里，呈南北走向，长达数公里，四周峭壁高达二、三十米，地貌奇特，山势陡峭，雄伟挺拔，十分险要，是历代兵家相争之地，也是七十二崮中居住人数最多的山崮。据清道光七年《沂水县志•舆地》记载：“纪王崮相传纪子大去其国居此，故名。”公元前690年，位于今寿光市的诸候国纪国遭齐国攻伐，纪王-逃离到这座高高的山崮上，建起了第二座都城纪王城，也就是我们将要游览的天上王城风景区。</span></p><h4 id='2郯城中华银杏生态旅游区'><span>2.郯城中华银杏生态旅游区</span></h4><p><span>这里为国家AAAA级旅游景区。新村乡物华天宝，人杰地灵，因盛产银杏而名扬海外。此地西临滔滔沂河，古迹颇多，“红崖古梅”即为郯国“唐八景”之一，其传说已亘古千年，久不衰也。郯城新村银杏园旅游区位于新村乡政府驻地，东北距郯城县城不足20公里。1992年建造园林，取名“银杏古梅园”，由原山东省委副书记宋法棠题写园名。后以景区内最大的亮点--银杏王为命名基础，将古梅园更名为“银杏园”。景区内古银杏王、松、古槐以及红崖古梅，官竹寺等均为高品位的旅游资源，要以古银杏王、古槐、古梅、古寺、古银杏树等古韵浓厚的生态人文景观的合理布局，辟建高档次的游览区，至2000年底初具规模。该园分前门、古银杏、儿童乐园、雕塑群、八卦古阵及官竹寺等六大景区。内有参天古银杏一株，高37米，覆荫亩余，根及数里，有“树中之王”之称，据考此树植于西汉永光年间，距今已达3000载之久，巍然壮观，实属罕见。重修后的官竹寺庙，其建筑古朴典雅，风格奇异，香火缭绕，钟声盈盈。游人至此，如入仙境，流连忘返。园林内另辟有休闲岛、人工湖、三十六计、连魂阵等新景点十余处，供游人览赏。该园设计独特、建工精巧，环境幽雅，为人们休憩娱乐、观光旅游之胜地。1993年秋，首届中国郯城银杏节在这里举行，此后几年全国各地游客慕名而来，名声雀起。每及春秋季节，各地文人骚客汇于此，登高望远，吟诗作画，流连忘返，其情其景，难以言表。</span></p><h4 id='3皇山东夷文化园'><span>3.皇山东夷文化园</span></h4><p><span>这里为国家AAAA级旅游景区，位于临沂经济技术开发区西北部，沂河之畔。景区主要依托省级重点文物保护单位——皇山修建而成是。皇山出土的史前古村落遗址，距今有5000多年。整个景区规划依托优越的地理区位、历史文化与绿色生态资源，以东夷文化为主题，充分彰显厚重的文化底蕴，打造融文化艺术体验、绿色游憩空间于一体的城市旅游目的地。景区现已建成皇山阁、毓秀亭、指挥使亭、九夷之尊广场、伏羲广场、东夷名人雕塑群、东夷原始人生活雕塑区等景点，旨在倾力打造以东夷文化为依托的城市休闲名片。</span></p><p><span>岱崮地貌是中国第五大造型地貌，位于蒙阴县岱崮镇，地处临沂、莱芜、淄博三市交界处。沂蒙山区素有72崮之称，岱崮独占30，境内群崮耸立，千态百姿，形似神似，粗犷巍然，分布集中，造型秀美，在我国造型地貌中比较稀缺，在世界造型地貌中具有独特性、唯一性，“崮”这种地貌也因此被命名为“岱崮地貌”，岱崮镇也被众多专家、学者誉为“中国崮乡”，被山东省旅游局、大众日报社评为全省十大最具旅游发展潜力的乡镇。岱崮地貌区域山耸百花间，水穿山涧流，山水灵动，孕育了丰富的历史文化，境内古迹遍布，汉唐文化、红色文化、山寨文化遗留丰富。从刘秀下南洋时的东指、都城隍、扳倒井、犁掩沟，到纪念李世民情深意重的吕娘娘庙；从二十四孝之首郭巨埋儿孝母的经典传颂，到龙须崮-打响沂蒙山区武装革命的第一枪；从两次“南北岱崮”保卫战，到如火如荼的“小三线”建设，都在这片热土上留下了深深的足迹。</span></p><h4 id='4沂蒙红色影视党性教育）基地'><span>4.沂蒙红色影视（党性教育）基地</span></h4><p><span>这里位于马牧池乡常山村，由山东沂蒙红色影视基地旅游开发公司投资开发，聘请山东省旅游规划设计院规划设计。基地共由《红嫂纪念馆》、《古山村》、《古县城》、《山乡梦度假村》四部分组成，占地1129亩，总投资2.6亿元，为国家3A级旅游区，计划两年内建成4A级旅游景区。一期工程已投资1800万元，建设《红嫂纪念馆》，用古朴的农家院实景和大型群雕塑像，再现当年红嫂乳汁救伤员、沂蒙母亲抚养革命后代，千辆小车下江南、姐妹们做军鞋、碾军粮、烙煎饼、补军装、送郎参军、送子上前线的真实场景。同时投资1200万元对《古山村》进行保护性修缮，改建、修复了供影视拍摄专用的炮楼、戏台、古道、城门、围墙、古庙、院落等景点。二期工程投资6800万元开工新建一座占地128亩，功能齐全的《古县城》。投资5000万元建设一处集水景拍摄、旅游观光和供剧组、游客吃住行于一体的《山乡梦度假村》。三期工程拟投资1.2亿元，对“沂蒙母亲”王换于纪念馆和“红嫂原型”明德英故居进行扩建，同时修建将军纪念馆。</span></p><h4 id='5中华奇石城'><span>5.中华奇石城</span></h4><p><span>这里坐落在山东省临沂市费县城北一公里处，是中国最大的观赏石基地，国家AAA-景区，山东省重点文化旅游产业项目，省国土资源厅重点开发项目，临沂市的重点工程。总投资10.2亿元，控制规划面积4000亩，集旅游开发与奇石交易并重，打造全国最大的奇石交易市场，山水相映奇石相间的奇石休闲旅游度假区，和山东省独具特色的奇石商业街。费县中华奇石城位于山东省临沂市沂蒙革命老区费县县城北郊，项目总规划面积8平方公里，北至荣和庄和盖家洞村，南至327国道，西至沂蒙百草园，东与塔城路相邻，总投资约10.2亿元。一期工程占地面积4000亩，景区按照“城中有镇、镇中有村、村中有景、景中生情”的布局设计理念，依托天籁石谷为中心，精心打造出奇石商业街、红云小镇、龙园、续缘、随缘、梅园、海棠园等十余处景点。</span></p><h4 id='6周村古商城'><span>6.周村古商城</span></h4><p><span>这里为国家AAAA级旅游景区、山东省文物保护单位、爱国主义教育基地。周村古商城景区位于山东省淄博市周村区，素有“旱码头”、“金周村”、“丝绸之乡”、“天下第一村”的美誉。景区总占地面积60.5公顷，现为省级重点文物保护单位，国家AAAA级旅游景区，主要由大街、丝市街、银子市街等古街组成，现有保存完好的明清古建筑5万余平方米。</span></p><h4 id='7莒县浮来山风景区'><span>7.莒县浮来山风景区</span></h4><p><span>这里位于山东省东南部，隶属美丽的海滨城市——日照市，是国家AAA级旅游区、省级地质遗迹自然保护区，距日照市60公里、莒国故城6公里，千年古刹定林寺、千年古观朝阳观、天下银杏第一树、世界之最檀根王等景点吸引着中外游客纷至沓来，曾接待过-、-、-、吕正操、王丙乾、钱伟长、张思卿、-、胡绳、彭佩云、丁肇中、赵忠祥、沈力等20多位党和国家领导人及中外名人。</span></p><h4 id='8日照竹洞天风景区'><span>8.日照竹洞天风景区</span></h4><p><span>这里位于日照城区西端的将帅沟毛竹园，总面积1000多亩，其中毛竹面积200多亩，其他竹子面积400多亩，水域面积400多亩，是南竹北移的成功典范。景区绿化面积在80%以上，生长着毛竹、淡竹、斑竹、箬竹、紫竹、钢竹、金镶玉竹等100多个竹子品种。同时辟有专门的竹子品种展示区域，既是一个天然氧吧，又是一个生态植物园。</span></p><h4 id='9魏集古镇旅游区'><span>9.魏集古镇旅游区</span></h4><p><span>这里位于山东省惠民县魏集镇，通过古色古香的魏集老街把魏集古村落景区、魏氏庄园景区和黄河风情带连成有机的整体，2017年被评为AAAA级旅游景区。魏集古村落内河道交织，古街错落有致，古镇古码头，黄河文化、鲁北民俗文化、古镇文化在这里融汇，再现了作为唐朝重要驿站永安古镇的历史风采。景区内还形成以特色小吃街、手工作坊街、民俗主题街、世界精品民宿文化风情园、网红玻璃栈桥、农耕园等为主的消费业态，成为集“吃、住、行、游、娱、购”旅游元素于一体的综合性景区。</span></p></div></div>
+</body>
+</html>
