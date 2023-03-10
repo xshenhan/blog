@@ -40,7 +40,8 @@ def write_to_md(methods, domain, rec_list, basedir):
                         if num4==0:
                             index.write(f"[{dir4}]")
                         else:
-                            index.write(f"({dir4})\n")
+                            path="/".join(dir4.split("\\"))
+                            index.write(f"({methods}://{domain}/{path})\n")
 
 
 
