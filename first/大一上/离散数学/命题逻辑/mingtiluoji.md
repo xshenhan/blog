@@ -12,7 +12,7 @@
 
 7. 指派：
 
-   ![image-20221230190323779](https://u.leoroom.top/img/image-20221230190323779.png)
+   ![image-20221230190323779](https://raw.githubusercontent.com/hanleo001/img/main/image-20221230190323779.png)
 
 8. A compound proposition formula is said to be
    - a tautology（重言式）if it is true under any assignment;
@@ -27,7 +27,7 @@
 
 11. 德摩根律：
 
-    ![image-20221230191459078](https://u.leoroom.top/img/image-20221230191459078.png)
+    ![image-20221230191459078](https://raw.githubusercontent.com/hanleo001/img/main/image-20221230191459078.png)
 
 12. ![image-20221230191632819](https://img.leom.me/images/2022/12/30/image-20221230191632819.png)
 
@@ -45,4 +45,4 @@
 
 17. Proof by Resolutions 归结法 [examples](http://p.ananas.chaoxing.com/star3/origin/f054805f8c24c3be178b18dfc727f8fa.png?rw=1126&rh=776&_fileSize=128902&_orientation=1)
 
-![image-20221230202313989](https://u.leoroom.top/img/image-20221230202313989.png)
+![image-20221230202313989](https://raw.githubusercontent.com/hanleo001/img/main/image-20221230202313989.png)

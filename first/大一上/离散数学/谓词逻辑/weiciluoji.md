@@ -24,11 +24,11 @@
 
 9. WFF
 
-   ![](https://u.leoroom.top/img/image-20230101134055402.png)
+   ![](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101134055402.png)
 
 10. [一些例子](http://p.ananas.chaoxing.com/star3/origin/47fa699c4856a523c9cfedaf7640a884.png?rw=1191&rh=1684&_fileSize=65659&_orientation=1)
 
-11. 指派：![image-20230101135943461](https://u.leoroom.top/img/image-20230101135943461.png)
+11. 指派：![image-20230101135943461](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101135943461.png)
 
 12. - universally valid (普遍有效的) if it is true under any assignment;
 
@@ -38,24 +38,24 @@
 
 13. Equivalence of Predicate Formulas ：[内容](http://p.ananas.chaoxing.com/star3/origin/295b09d1f1728dfa995b03dfb7d0dfdf.png?rw=1013&rh=87&_fileSize=28803&_orientation=1)
 
-14. ![image-20230101140216858](https://u.leoroom.top/img/image-20230101140216858.png)
+14. ![image-20230101140216858](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101140216858.png)
 
-15. ![image-20230101140443061](https://u.leoroom.top/img/image-20230101140443061.png)
+15. ![image-20230101140443061](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101140443061.png)
 
-16. ![image-20230101140515398](https://u.leoroom.top/img/image-20230101140515398.png)
+16. ![image-20230101140515398](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101140515398.png)
 
-17. ![image-20230101140638824](https://u.leoroom.top/img/image-20230101140638824.png)
+17. ![image-20230101140638824](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101140638824.png)
 
-18. ![image-20230101140800965](https://u.leoroom.top/img/image-20230101140800965.png)
+18. ![image-20230101140800965](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101140800965.png)
 
 19. [推理](http://p.ananas.chaoxing.com/star3/origin/5d98b1f62d6219e64d1505aed287faaa.png?rw=1191&rh=1684&_fileSize=53335&_orientation=1)
 
-20. Prenex Normal Form (前束范式) ![image-20230101141614231](https://u.leoroom.top/img/image-20230101141614231.png)
+20. Prenex Normal Form (前束范式) ![image-20230101141614231](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101141614231.png)
 
 21. [Skolem Normal Form ](http://p.ananas.chaoxing.com/star3/origin/2de7f3218614965e34808fba02b3c342.png?rw=1159&rh=728&_fileSize=157556&_orientation=1)
 
 22. 归结法
 
-    ![image-20230101141838253](https://u.leoroom.top/img/image-20230101141838253.png)
+    ![image-20230101141838253](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101141838253.png)
 
-23. ![image-20230101141915050](https://u.leoroom.top/img/image-20230101141915050.png)
+23. ![image-20230101141915050](https://raw.githubusercontent.com/hanleo001/img/main/image-20230101141915050.png)
