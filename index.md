@@ -69,6 +69,12 @@
 >>
 >>>- [第七章](https://blog.leoh.top/first/大一下/数字电子技术/第七章.html)
 >>>
+>>>- [第三章](https://blog.leoh.top/first/大一下/数字电子技术/第三章.html)
+>>>
+>>>- [第九章](https://blog.leoh.top/first/大一下/数字电子技术/第九章.html)
+>>>
+>>>- [第二章](https://blog.leoh.top/first/大一下/数字电子技术/第二章.html)
+>>>
 >>>- [第五章](https://blog.leoh.top/first/大一下/数字电子技术/第五章.html)
 >>>
 >>>- [第六章](https://blog.leoh.top/first/大一下/数字电子技术/第六章.html)
