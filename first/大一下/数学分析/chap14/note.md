@@ -73,7 +73,7 @@ $$
 $$
 \frac{\partial z}{\partial x}=\frac{\partial f}{\partial u} \cdot \frac{\partial u}{\partial x}+\frac{\partial f}{\partial v} \cdot \frac{\partial v}{\partial x}, \frac{\partial z}{\partial y}=\frac{\partial f}{\partial u} \cdot \frac{\partial u}{\partial y}+\frac{\partial f}{\partial v} \cdot \frac{\partial v}{\partial y}
 $$
-链法则<img src="https://u.leoroom.top/img/image-20230313200414815.png" alt="image-20230313200414815" style="zoom: 80%;" />
+链法则<img src="https://raw.githubusercontent.com/hanleo001/img/main/image-20230313200414815.png" alt="image-20230313200414815" style="zoom: 80%;" />
 矩阵形式 $ \quad\left(\begin{array}{lll}z_{x} & z_{y}\end{array}\right)=\left(\begin{array}{ll}f_{u} & f_{v}\end{array}\right)\left(\begin{array}{ll}u_{x} & u_{y} \\ v_{x} & v_{y}\end{array}\right) $
 
 2. 推广 设向量值函数
@@ -120,7 +120,6 @@ $$
    -x y, & |x|<|y|
    \end{array} \text {, 求 } f_{x y}(0,0), f_{y x}(0,0)\right. \text {. }
    $$
-    
 
 2. 定理 若 $f(x, y)$ 的两个二阶混合偏导数在 $(x, y)$ 连续, 则
    $$
@@ -131,7 +130,7 @@ $$
 
 $$
 \begin{aligned}
-\mathrm{d}^n z & =\left(\frac{\operatorname{def}}{\partial x} \mathrm{~d} x+\frac{\partial}{\partial y} \mathrm{~d} y\right)^n z \\
+\mathrm{d}^n z & =\left(\frac{\partial}{\partial x} \mathrm{~d} x+\frac{\partial}{\partial y} \mathrm{~d} y\right)^n z \\
 & =\left(\sum_{k=0}^n C_n^k \frac{\partial^n}{\partial x^k \partial y^{n-k}} \mathrm{~d} x^k \mathrm{~d} y^{n-k}\right) z
 \end{aligned}
 $$
@@ -188,4 +187,35 @@ $$
 
    (3) 若$\boldsymbol{H}$为半正(负)定矩阵，则$f\left(x_0, y_0\right)$无法判断
 
-   
+   ## 14.5隐函数存在定理
+
+1. 
+
+   ![image-20230409152112559](https://raw.githubusercontent.com/hanleo001/img/main/image-20230409152112559.png)
+
+2. ![image-20230409152246045](https://raw.githubusercontent.com/hanleo001/img/main/image-20230409152246045.png)
+
+3. ![image-20230409152324520](https://raw.githubusercontent.com/hanleo001/img/main/image-20230409152324520.png)
+
+- 求隐函数所有偏导数时, 全微分法比较简便
+
+
+
+
+
+## 14.7 多元微分学的几何应用
+
+| 几何图形 | 方程类型                                                     | 法向量或方向向量                                             |
+| -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 曲线     | 空间曲线$\Gamma$参数式$x=x(t), y=y(t), z=z(t)$               | $\Gamma$ 的切向量$\boldsymbol{\tau}=\left(x^{\prime}\left(t_{0}\right), y^{\prime}\left(t_{0}\right), z^{\prime}\left(t_{0}\right)\right)$ |
+| 曲线     | 一般式$\Gamma:\left\{\begin{array}{l}F(x,y,z)=0 \\ G(x,y,z)=0\end{array}\right.$ | $(\frac{\part{(F,G)}}{\part(y,z)},\frac{\part{(F,G)}}{\part(z,x)},\frac{\part{(F,G)}}{\part(x,y)})|_{u_0}$ |
+| 曲面     | 一般式：$F(x, y, z) = 0$                                     | $\nabla F\left(M_{0}\right)=\left.\left(F_{x}, F_{y}, F_{z}\right)\right.$ |
+| 曲面     | 参数式：$\left\{\begin{array}{l}x=x(u, v) \\ y=y(u, v) \\ z=z(u, v)\end{array}\right.$ | $(x_u,y_u,z_u)\times(x_v,y_v,z_v)=\\(\frac{\part(y,z)}{\part(u,v)},\frac{\part(z,x)}{\part(u,v)},\frac{\part(x,y)}{\part(u,v)})$ |
+
+![image-20230409183559184](https://raw.githubusercontent.com/hanleo001/img/main/image-20230409183559184.png)
+
+## 14.8 条件极值--Lagrange乘数法
+
+- 最值问题：
+
+  原则 有界闭区域上的可微函数的最值在内部 驻点或边界点取到. 实际问题中, 若最值必在区域 内部取得又驻点唯一, 则此驻点就是最值点.
