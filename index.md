@@ -83,6 +83,18 @@
 >>>
 >> 数学分析
 >>
+>>> chap10
+>>>
+>>> chap11
+>>>
+>>>>- [note](https://blog.leoh.top/first/大一下/数学分析/chap11/note.html)
+>>>>
+>>> chap12
+>>>
+>>>>- [Dirichlet_core](https://blog.leoh.top/first/大一下/数学分析/chap12/Dirichlet_core.html)
+>>>>
+>>>>- [note](https://blog.leoh.top/first/大一下/数学分析/chap12/note.html)
+>>>>
 >>> chap13
 >>>
 >>>>- [note](https://blog.leoh.top/first/大一下/数学分析/chap13/note.html)
@@ -93,6 +105,16 @@
 >>>>
 >>> chap16
 >>>
+>>>>- [第十六章 重积分](https://blog.leoh.top/first/大一下/数学分析/chap16/第十六章 重积分.html)
+>>>>
+>>> chap17
+>>>
+>>>>- [note](https://blog.leoh.top/first/大一下/数学分析/chap17/note.html)
+>>>>
+>>> chap18
+>>>
+>>>>- [note](https://blog.leoh.top/first/大一下/数学分析/chap18/note.html)
+>>>>
 >>> chap9
 >>>
 > 大一寒假

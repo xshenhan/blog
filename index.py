@@ -1,4 +1,5 @@
 import os
+import argparse
 
 pathlst=[]
 filelst=[]
@@ -72,13 +73,15 @@ def write_to_md(methods, domain, file_list, basedir):
 
 
 if __name__ == "__main__":
-    file_list = get_dir_reclusively("first", r"E:\www\site\github\hanleo001.github.io")
+    # get the path
+    path = os.getcwd()
+    file_list = get_dir_reclusively("first", path)
     print(file_list)
     write_to_md(
         "https",
         "blog.leoh.top",
         file_list,
-        r"E:\www\site\github\hanleo001.github.io"
+        path
     )
-
+    # print(path)
 
